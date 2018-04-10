@@ -2,7 +2,7 @@
 {% load staticfiles %}
 <html>
     <head>
-        <title>Blog Project</title>
+        <title>Jason Blog</title>
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -16,7 +16,6 @@
 
         {# Custom CSS#}
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 
         {# Fonts#}
         <link href="https://fonts.googleapis.com/css?family=Montserrat|Russo+One" rel="stylesheet">
@@ -28,15 +27,15 @@
 <body class='loader'>
 
 
-  <nav class="navbar navbar-default techfont custom-navbar">
+  <nav class="navbar navbar-inverse techfont custom-navbar">
     <div class="container">
 
 
       <ul class="nav navbar-nav">
-        <li><a id="brand" class='navbar-brand bigbrand' href="{% url 'post_list' %}">JL BLOG</a></li>
+        <li><a class='navbar-brand bigbrand' href="{% url 'post_list' %}">JL blog</a></li>
         <li><a href="{% url 'about'%}">About Jason Lee</a></li>
-        <li><a href="https://www.linkedin.com/feed/?trk=brandpage_baidu_pc-mainlink">LinkedIn</a></li>
         <li><a href="https://github.com/Jason003">Github</a></li>
+        <li><a href="https://www.linkedin.com/in/jiefan-lee-3b8381137/">LinkedIn</a></li>
 
       </ul>
 
@@ -52,10 +51,6 @@
         <li>
           <a href="{% url 'logout' %}" >Log out</a>
         </li>
-
-        <li>
-          <a >Welcome: {{ user.username }}</a>
-        </li>
           {% else %}
           <li><a class='nav navbar-right' href="{% url 'login' %}" ><span class="glyphicon glyphicon-user"></span></a></li>
         {% endif %}
@@ -69,9 +64,10 @@
             <div class="row">
                 <div class="col-md-8">
                   <div class="blog_posts">
+                    <hr>
                     {% block content %}
                     {% endblock %}
-
+                    <hr>
                   </div>
 
                 </div>
