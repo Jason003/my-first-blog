@@ -2,12 +2,9 @@
 
 
 {% block content %}
-<div class="container">
-
-
   <div class="jumbotron">
 
-    <h2> Login </h2>
+    <h2> Login: </h2>
     {% if form.errors %}
         <p>Your username and password didn't match.Please try again!</p>
     {% endif %}
@@ -20,5 +17,4 @@
         <input type="hidden" name="next" value="{{ next }}" />
     </form>
   </div>
-</div>
 {% endblock %}
